@@ -1,0 +1,15 @@
+﻿fastapi
+uvicorn
+pydantic
+numpy
+pandas
+scipy
+matplotlib
+python-multipart
+openai
+python-dotenv
+openpyxl
+Pillow
+dashscope
+
+
