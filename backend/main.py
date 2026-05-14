@@ -34,17 +34,21 @@ plt.rcParams["axes.unicode_minus"] = False
 
 app = FastAPI(title="概率统计AI动态演示平台API", version="1.0.0")
 
-# 将第33-39行的 CORS 配置改为:
+# CORS 配置 - 支持 Netlify 前端域名
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://genuine-custard-6569a6.netlify.app",
+        "http://localhost:8000",
+        "http://127.0.0.1:8000"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-    expose_headers=["*"]
 )
 
 # 用户会话数据存储文件
+
 USER_DATA_FILE = "user_sessions.json"
 
 def load_user_data():
